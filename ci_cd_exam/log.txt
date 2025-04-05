@@ -1,0 +1,216 @@
+
+============================
+    Authentication test
+============================
+
+request done at "/permissions"
+| username="alice"
+| password="wonderland"
+
+Expected result = 200; 
+Actual result   = 200
+
+==> SUCCESS
+
+
+============================
+    Authentication test
+============================
+
+request done at "/permissions"
+| username="bob"
+| password="builder"
+
+Expected result = 200; 
+Actual result   = 200
+
+==> SUCCESS
+
+
+============================
+    Authentication test
+============================
+
+request done at "/permissions"
+| username="clementine"
+| password="mandarine"
+
+Expected result = 403; 
+Actual result   = 403
+
+==> SUCCESS
+
+
+============================
+     Authorization test
+============================
+
+User: alice
+
+Test /v1 --> expected: True, got: True
+Test /v2 --> expected: True, got: True
+
+==> SUCCESS
+
+============================
+     Authorization test
+============================
+
+User: bob
+
+Test /v1 --> expected: True, got: True
+Test /v2 --> expected: False, got: False
+
+==> SUCCESS
+
+============================
+     Content test (v1)
+============================
+
+Sentence: "life is beautiful"
+Expected: positive
+Returned: {'username': 'alice', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+
+==> SUCCESS
+
+
+============================
+     Content test (v1)
+============================
+
+Sentence: "that sucks"
+Expected: negative
+Returned: {'username': 'alice', 'version': 'v1', 'sentence': 'that sucks', 'score': -0.3612}
+
+==> SUCCESS
+
+
+============================
+     Content test (v2)
+============================
+
+Sentence: "life is beautiful"
+Expected: positive
+Returned: {'username': 'alice', 'version': 'v2', 'sentence': 'life is beautiful', 'score': 0.5994}
+
+==> SUCCESS
+
+
+============================
+     Content test (v2)
+============================
+
+Sentence: "that sucks"
+Expected: negative
+Returned: {'username': 'alice', 'version': 'v2', 'sentence': 'that sucks', 'score': -0.3612}
+
+==> SUCCESS
+
+
+============================
+     Authorization test
+============================
+
+User: alice
+
+Test /v1 --> expected: True, got: True
+Test /v2 --> expected: True, got: True
+
+==> SUCCESS
+
+============================
+     Authorization test
+============================
+
+User: bob
+
+Test /v1 --> expected: True, got: True
+Test /v2 --> expected: False, got: False
+
+==> SUCCESS
+
+============================
+     Content test (v1)
+============================
+
+Sentence: "life is beautiful"
+Expected: positive
+Returned: {'username': 'alice', 'version': 'v1', 'sentence': 'life is beautiful', 'score': 0.5994}
+
+==> SUCCESS
+
+
+============================
+     Content test (v1)
+============================
+
+Sentence: "that sucks"
+Expected: negative
+Returned: {'username': 'alice', 'version': 'v1', 'sentence': 'that sucks', 'score': -0.3612}
+
+==> SUCCESS
+
+
+============================
+     Content test (v2)
+============================
+
+Sentence: "life is beautiful"
+Expected: positive
+Returned: {'username': 'alice', 'version': 'v2', 'sentence': 'life is beautiful', 'score': 0.5994}
+
+==> SUCCESS
+
+
+============================
+     Content test (v2)
+============================
+
+Sentence: "that sucks"
+Expected: negative
+Returned: {'username': 'alice', 'version': 'v2', 'sentence': 'that sucks', 'score': -0.3612}
+
+==> SUCCESS
+
+
+============================
+    Authentication test
+============================
+
+request done at "/permissions"
+| username="alice"
+| password="wonderland"
+
+Expected result = 200; 
+Actual result   = 200
+
+==> SUCCESS
+
+
+============================
+    Authentication test
+============================
+
+request done at "/permissions"
+| username="bob"
+| password="builder"
+
+Expected result = 200; 
+Actual result   = 200
+
+==> SUCCESS
+
+
+============================
+    Authentication test
+============================
+
+request done at "/permissions"
+| username="clementine"
+| password="mandarine"
+
+Expected result = 403; 
+Actual result   = 403
+
+==> SUCCESS
+

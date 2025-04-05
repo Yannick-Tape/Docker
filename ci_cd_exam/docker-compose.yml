@@ -1,0 +1,54 @@
+version: "3.9"
+
+services:
+  api:
+    image: datascientest/fastapi:1.0.0
+    container_name: api
+    ports:
+      - "8000:8000"
+    networks:
+      - ci_net
+
+  auth_test:
+    build:
+      context: ./auth_test
+    container_name: auth_test
+    environment:
+      - LOG=1
+    depends_on:
+      - api
+    volumes:
+      - ./log.txt:/log/api_test.log
+    networks:
+      - ci_net
+
+  rights_test:
+    build:
+      context: ./rights_test
+    container_name: rights_test
+    environment:
+      - LOG=1
+    depends_on:
+      - api
+    volumes:
+      - ./log.txt:/log/api_test.log
+    networks:
+      - ci_net
+
+  content_test:
+    build:
+      context: ./content_test
+    container_name: content_test
+    environment:
+      - LOG=1
+    depends_on:
+      - api
+    volumes:
+      - ./log.txt:/log/api_test.log
+    networks:
+      - ci_net
+
+networks:
+  ci_net:
+    driver: bridge
+
